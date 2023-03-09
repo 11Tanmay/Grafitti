@@ -47,7 +47,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });                 //to be used when we need to upload a file
 
 /* ROUTES WITH FILES */
-app.post("/auth/register", upload.single("picture"), register);     //router to be accessed to authenticate
+app.post("/auth/register", upload.single("picture"), register);     //route to be accessed to authenticate
 app.post("/posts", verifyToken, upload.single("picture"), createPost);      //to create a post first verify token and the upload a picture
 
 /* ROUTES */
